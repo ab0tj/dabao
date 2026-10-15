@@ -10,7 +10,7 @@
 
 ## Design Rationale
 
-I found that split keyboards can be cumbersome when I’m not working at a desk. Managing two independent halves (as well as a laptop) while moving between coworking spaces, cafés, or even working from the couch quickly becomes unwieldy, and I thought there had to be a better way.
+I found that split keyboards can be cumbersome when I’m not working at a desk. Managing a laptop plus two independent keyboard halves while moving between coworking spaces, cafés, or even working from the couch quickly becomes unwieldy, and thus began the journey to create a keyboard for this specific need...
 
 This project explores a keyboard that can seamlessly switch between a unibody form factor (easy to pick up and carry) and a fully split configuration when there's space for a full ergonomic setup. An integrated pointing device is included to reduce the need for external peripherals, making it truly portable.
 
@@ -25,15 +25,16 @@ In practice, using the thumb instead of the index finger feels functionally simi
 ## Features
 
 - **Unibody or Split:** Unique magnetic 4-pin connector allows the keyboard to be used as a single unibody or split into two halves via a USB-C cable. Use unibody mode on the go, and split mode at your desk!
-- **Single Microcontroller:** Uses one microcontroller and a GPIO expander, eliminating the need for two controllers or batteries to reduce costs and avoid managing uneven battery discharge.
+- **Single Microcontroller:** Uses one microcontroller and a GPIO expander, eliminating the need for two controllers or batteries to simplify charging and reduce costs.
 - **Integrated Trackpoint:** For convenient and precise cursor control.
-- **Reversible PCB:** Keeps ordering PCBs affordable. Also enables the trackpoint to be installed on the left or right side.
-- **Wireless:** Wireless operation (between the host computer) for portability.
+- **Reversible PCB:** Keeps ordering PCBs affordable.
+- **Wireless via Bluetooth:** Wireless operation (between the host computer) for portability.
 - **Hotswap Switches:** Supports Choc V1 or V2 switches. Can also be soldered directly if desired.
+- **Thin:** The case measures a mere 8mm from top to bottom (excluding switches and keycaps), making it very portable.
 
 ## Case
 
-The case was designed to be 3D printed with FDM in PLA or similar material, keeping it accessible. Multi-material would be useful for cleaner removal of supports, but is not necessary. The case as shown was printed in Charcoal Black Matte PLA on a BambuLab P1S (no AMS).
+The case was designed to be 3D printed with FDM in PLA or similar material, making it easy to print at home with consumer grade printers. Multi-material would be useful for cleaner removal of supports, but is not necessary. The case as shown was printed in Charcoal Black Matte PLA on a BambuLab P1S (no AMS).
 
 See [here](./cad) for CAD files, and printing instructions [here](./docs/build-guide.md#case).
 
@@ -51,6 +52,7 @@ See [here](./cad) for CAD files, and printing instructions [here](./docs/build-g
 > This project is provided for educational and experimental purposes only. It is shared "as-is," without any warranty of any kind, express or implied, including but not limited to the warranties of merchantability or fitness for a particular purpose. By using these files, you acknowledge that you are assuming all risks associated with the assembly, use, and operation of the hardware. The author shall not be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the project or the use of these files.
 
 See [Build Guide](./docs/build-guide.md) for instructions on how to build one for yourself!
+
 ## Firmware
 
 See [zmk-config](https://github.com/justinmklam/zmk-config).

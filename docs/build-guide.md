@@ -1,7 +1,9 @@
 # Build Guide
+
 This is the build guide for the dabao keyboard.
 
-Difficult level: intermediate/advanced (due to the fine pitch of the through hole USB C receptacle)
+Difficulty level: **intermediate/advanced** (due to the fine pitch of the through hole USB C receptacle)
+
 ## Parts List
 ### PCB
 
@@ -24,6 +26,9 @@ Here's an example of the magnetic pogo pin connector to purchase ([link](https:/
 
 ![](images/aliex-magnetic-pogo-pin.png)
 
+> [!INFO]
+> For the resistor R8 and capacitor C1 used in the trackpoint reset circuit, this should technically not be necessary and can be controlled by the MCU instead. If going this path, uncomment out [this line](https://github.com/justinmklam/zmk-config/blob/204022fa73cc7d1d807504aa6fad1bef3adb5fb0/boards/shields/dabao/dabao_trackpoint.dtsi#L9) in the trackpoint driver and leave R8 and C1 unpopulated.
+
 Parts that you'll need to provide yourself:
 
 | Qty | Description                                         |
@@ -37,6 +42,9 @@ Parts that you'll need to provide yourself:
 | 1   | Display (optional)                                  |
 
 \*Wondering where to find a trackpoint module? See [Trackpoint Sourcing](./trackpoint-sourcing.md).
+
+> [!WARNING]
+> For the display, the PCB was designed to support a display and it *should* work, but is currently untested. The case would need to be modified to accommodate the display, so if this interests you please feel free to contribute the changes to this repo! The zmk firmware would also need to be updated by following the docs for adding display support [here](https://zmk.dev/docs/config/displays).
 ### Case
 Hardware for the case:
 
@@ -56,7 +64,7 @@ The table below consists of the parts to 3D print.
 | 1   | Power Switch          |
 | 1   | Trackpoint Stem Multi |
 
-My parts were printed in Charcoal Black Matte PLA on a BambuLab P1S. For the main case parts, the settings were:
+My parts were printed in Charcoal Black Matte PLA on a BambuLab P1S (no AMS). For the main case parts, the settings were:
 - 0.12mm High Quality Profile
 - Enable Support, On Build Plate Only
 
@@ -76,6 +84,8 @@ The PCBs are reversible, so it's recommended to label each side with masking tap
 
 ![](images/pcb-bare.png)
 
+> [!INFO]
+> Note that some of the pictures shown were taken retroactively, so don't be confused if the PCB doesn't look exactly as yours during assembly. Please refer to the [schematic](../pcb/dabao/exports/dabao-schematic.pdf) or the [kicad design files](../pcb/dabao) if more clarity is needed.
 ### Right Side
 First, solder all the components on the backside, starting with the diodes, ensuring the orientation of the diode is correct.
 
@@ -94,21 +104,22 @@ Solder the reset switch on the bottom side.
 ![](images/pasted-image-20261012104757.png)
 
 
+Solder the four 4.7K resistors on R2, R3, R4, R5 below the reset switch:
+
+![](images/pasted-image-20261014211810.png)
+
+For the display, solder the corresponding jumper pads depending on the type of communication protocol your display uses (JP12/JP11 for I2c, or JP10/JP9 for SPI). Note this is untested, but it _should_ work.
+
 Solder the jumper pads for the right side:
 
 ![](images/pasted-image-20261014211618.png)
 
-Solder the resistors and capacitors:
+To solder the USB C connector pins, apply flux on the pads. Then melt a glob of solder on to the soldering iron tip, and drag the solder across the pads. There are some instructional videos on youtube if you need assistance with this step. 
 
-![](images/pasted-image-20261014211810.png)
-
-To solder the USB C connector pins, apply flux on the pads. Then melt a glob of solder on to the soldering iron tip, and drag the solder across the pads.
-
-Solder the battery connector and if using a display, the headers. 
+Solder the battery connector. 
 
 ![](images/pasted-image-20261014212122.png)
 
-For the display, solder the corresponding jumper pads depending on the type of display being used (OLED or nice!view). Note this is untested, but it _should_ work. Solder the jumper wires depending on the type of communication protocol your display uses (JP12/JP11 for I2c, or JP10/JP9 for SPI).
 
 Solder the magnetic pogo pin connector. For this step, make sure the bottom of the connector is aligned with the top of the PCB.
 
@@ -135,6 +146,8 @@ Solder the ribbon cable of the trackpoint sensor to the underside:
 ![](images/pasted-image-20261012105713.png)
 
 And the trackpoint module board from the top side. I used diode legs for the top connections to give it more rigidity since it's just floating, and thin wire for the left connections.
+
+Also at this point, solder C1 and R8 if using.
 
 ![](images/pasted-image-20261012105758.png)
 
