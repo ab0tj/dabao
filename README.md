@@ -37,11 +37,12 @@ The case was designed to be 3D printed with FDM in PLA or similar material, keep
 
 See [here](./cad) for CAD files, and printing instructions [here](./docs/build-guide.md#case).
 
-![[DSCF3886-web.jpg]]
+![](./images/DSCF3886-web.jpg)
 
-![[DSCF3946-web.jpg]]
+![](./images/DSCF3946-web.jpg)
 
-![[DSCF3984-web.jpg]]
+
+![](./images/DSCF3984-web.jpg)
 
 
 ## Build Guide
