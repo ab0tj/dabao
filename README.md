@@ -2,10 +2,10 @@
 
 打包 (dǎ bāo or daa2 baau1), which means to take out (food) in Chinese, is a wireless, portable 36-key keyboard with a thumb trackpoint, designed for maximum flexibility and convenience.
 
-> ![pcb as unibody](images/pcb-mono.jpeg)
+> ![pcb as unibody](images/DSCF3942-web.jpg)
 > <sub>Keyboard can be used as a unibody...</sub>
 >
-> ![pcb as split](images/pcb-split.jpeg)
+> ![pcb as split](images/DSCF3957-web.jpg)
 > <sub>... or as a split!</sub>
 
 ## Design Rationale
@@ -31,20 +31,28 @@ In practice, using the thumb instead of the index finger feels functionally simi
 - **Wireless:** Wireless operation (between the host computer) for portability.
 - **Hotswap Switches:** Supports Choc V1 or V2 switches. Can also be soldered directly if desired.
 
-## Firmware
-
-See [zmk-config](https://github.com/justinmklam/zmk-config).
-
 ## Case
 
-*Coming soon!* - The case will make the magnetic interface more robust, which will allow the keyboard to be lifted from either side without it collapsing in half. Additional magnets will likely be added to make the connection more secure.
+The case was designed to be 3D printed with FDM in PLA or similar material, keeping it accessible. Multi-material would be useful for cleaner removal of supports, but is not necessary. The case as shown was printed in Charcoal Black Matte PLA on a BambuLab P1S (no AMS).
+
+See [here](./cad) for CAD files, and printing instructions [here](./docs/build-guide.md#case).
+
+![[DSCF3886-web.jpg]]
+
+![[DSCF3946-web.jpg]]
+
+![[DSCF3984-web.jpg]]
+
 
 ## Build Guide
 
 > [!WARNING]
 > This project is provided for educational and experimental purposes only. It is shared "as-is," without any warranty of any kind, express or implied, including but not limited to the warranties of merchantability or fitness for a particular purpose. By using these files, you acknowledge that you are assuming all risks associated with the assembly, use, and operation of the hardware. The author shall not be liable for any claim, damages, or other liability, whether in an action of contract, tort, or otherwise, arising from, out of, or in connection with the project or the use of these files.
 
-*Coming soon!*
+See [Build Guide](./docs/build-guide.md) for instructions on how to build one for yourself!
+## Firmware
+
+See [zmk-config](https://github.com/justinmklam/zmk-config).
 
 ## Acknowledgements
 
